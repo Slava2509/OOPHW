@@ -9,15 +9,28 @@ public class Monk extends Mage {
 
     protected int spirituality; // духовность
 
-    public void heal (){
+    public void heal() {
 
     }
-    public void resurrect () {
+
+    public void resurrect() {
 
     }// воскрешение
 
     @Override
     public String toString() {
-        return name;
+        return "Монах";
+    }
+
+
+    @Override
+    public void step() {
+
+    }
+
+    @Override
+    public String getInfo() {
+        return name + " здоровье " + helth + " макс. уровень здоровья: " + maxHelth + " скорость: " + speed +
+                " урон: " + damage + " защита: " + def + " раса " + race + " мана: " + mana + " ум: " + iq;
     }
 }

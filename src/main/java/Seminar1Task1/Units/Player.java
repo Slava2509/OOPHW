@@ -1,7 +1,7 @@
 package Seminar1Task1.Units;
 //Крестьянин	Разбойник	Снайпер	Колдун
 //        копейщик	арбалетчик	монах
-public class Player {
+public abstract class Player implements GameInterface {
 
     protected int helth;
     protected int maxHelth;
@@ -40,6 +40,7 @@ public class Player {
     public void defend () {
         System.out.println("общая защита");
     }
+
 
 }
 

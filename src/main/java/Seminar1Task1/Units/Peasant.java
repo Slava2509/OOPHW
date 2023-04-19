@@ -1,9 +1,9 @@
 package Seminar1Task1.Units;
 
 public class Peasant extends Player {
-    public Peasant(int helth, int maxHelth, int speed, int damage, int def, String race, String name, int brave) {
-        super(helth, maxHelth, speed, damage, def, race, name);
-        this.brave = brave;
+    public Peasant() {
+        super(100, 100, 1, 1, 0, "hobbit", "Kolka");
+        this.brave = 10;
     }
 
     protected int brave; // храбрость
@@ -11,5 +11,20 @@ public class Peasant extends Player {
     public void prick (){
 
     }// колоть(укол)
+    @Override
+    public String toString() {
+        return "Крестьянин";
+    }
+    @Override
+    public void step() {
 
-}
+    }
+
+    @Override
+    public String getInfo() {
+        return name + " здоровье "+ helth +" макс. уровень здоровья: " + maxHelth +" скорость: "+ speed +
+                " урон: " + damage + " защита: " +def + " раса " + race;
+        }
+
+    }
+

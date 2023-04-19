@@ -2,7 +2,7 @@ package Seminar1Task1.Units;
 
 public class Sniper extends Shooter {
     public Sniper() {
-        super(100, 150, 6, 40, 3, "elf", "Legalaz", 30, 10);
+        super(100, 150, 6, 40, 3, "elf", "ContrTerrorist", 30, 10);
         this.criticalDamage = criticalDamage;
     }
 
@@ -14,6 +14,17 @@ public class Sniper extends Shooter {
 
     @Override
     public String toString() {
-        return name;
+        return "Снайпер";
     }
+
+    @Override
+    public void step() {
+
+    }
+    @Override
+    public String getInfo() {
+        return name +" здоровье: " + helth  + " макс. уровень здоровья: " + maxHelth +
+                " скорость: "+ speed + " урон: " + damage;
+    }
+
 }

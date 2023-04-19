@@ -1,6 +1,6 @@
 package Seminar1Task1.Units;
 
-public class Shooter extends Player {
+public abstract class Shooter extends Player {
     public Shooter(int helth, int maxHelth, int speed, int damage, int def, String race, String name, int rangeAttack, int amor) {
         super(helth, maxHelth, speed, damage, def, race, name);
         this.rangeAttack = rangeAttack;
@@ -16,5 +16,7 @@ public class Shooter extends Player {
     public void accurateShot () {
 
     }
+
+
 
 }

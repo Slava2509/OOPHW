@@ -2,9 +2,10 @@ package Seminar1Task1.Units;
 
 public class Thief extends Peasant {
     public Thief() {
-        super(100, 105, 5, 1, 2, "Ork", "Vasiliy", 50);
+        super();
         this.agility = 20;
         this.secrecy = 3;
+        this.name = "Julik";
     }
 
     protected int agility; // ловкость
@@ -19,6 +20,17 @@ public class Thief extends Peasant {
 
     @Override
     public String toString() {
-        return name;
+        return "Вор";
+    }
+
+    @Override
+    public void step() {
+
+    }
+
+    @Override
+    public String getInfo() {
+        return name + " здоровье " + helth + " макс. уровень здоровья: " + maxHelth + " скорость: " + speed +
+                " урон: " + damage + " защита: " + def + " раса " + race + " ловкость: " + agility + " скрытность " + secrecy;
     }
 }
