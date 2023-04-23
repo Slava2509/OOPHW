@@ -1,8 +1,10 @@
 package Seminar1Task1.Units;
 
+import java.util.ArrayList;
+
 public class XBowMan extends Shooter{
-    public XBowMan() {
-        super(100, 110, 15, 7, 5, "ogr", "Legalaz", 7, 10);
+    public XBowMan(ArrayList <Player> gang) {
+        super(100, 110, 15, 7, 5, "ogr", "Legalaz", gang);
         this.trick = 50;
     }
 
@@ -23,6 +25,7 @@ public class XBowMan extends Shooter{
 
     @Override
     public void step() {
+        System.out.println(getClass().getName());
 
     }
 

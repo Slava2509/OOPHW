@@ -1,8 +1,10 @@
 package Seminar1Task1.Units;
 
+import java.util.ArrayList;
+
 public class Peasant extends Player {
-    public Peasant() {
-        super(100, 100, 1, 1, 0, "hobbit", "Kolka");
+    public Peasant(ArrayList<Player> gang) {
+        super(100, 100, 1, 1, 0, "hobbit", "Kolka",gang);
         this.brave = 10;
     }
 
@@ -17,6 +19,8 @@ public class Peasant extends Player {
     }
     @Override
     public void step() {
+        System.out.println(getClass().getName());
+
 
     }
 

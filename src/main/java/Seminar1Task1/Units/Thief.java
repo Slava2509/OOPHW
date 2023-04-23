@@ -1,8 +1,11 @@
 package Seminar1Task1.Units;
 
+import java.util.ArrayList;
+
 public class Thief extends Peasant {
-    public Thief() {
-        super();
+    public Thief(ArrayList <Player> gang) {
+        super(gang);
+        this.speed = 2;
         this.agility = 20;
         this.secrecy = 3;
         this.name = "Julik";
@@ -25,6 +28,7 @@ public class Thief extends Peasant {
 
     @Override
     public void step() {
+        System.out.println(getClass().getName());
 
     }
 

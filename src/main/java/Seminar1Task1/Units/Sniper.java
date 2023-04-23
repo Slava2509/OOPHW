@@ -1,8 +1,10 @@
 package Seminar1Task1.Units;
 
+import java.util.ArrayList;
+
 public class Sniper extends Shooter {
-    public Sniper() {
-        super(100, 150, 6, 40, 3, "elf", "ContrTerrorist", 30, 10);
+    public Sniper(ArrayList<Player> gang) {
+        super(100, 150, 10, 40, 3, "elf", "ContrTerrorist", gang);
         this.criticalDamage = criticalDamage;
     }
 
@@ -19,7 +21,7 @@ public class Sniper extends Shooter {
 
     @Override
     public void step() {
-
+        System.out.println(getClass().getName());
     }
     @Override
     public String getInfo() {

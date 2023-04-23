@@ -1,11 +1,13 @@
 package Seminar1Task1.Units;
 
+import java.util.ArrayList;
+
 public class Spearman extends Player {
 
 
 
-    public Spearman() {
-        super(100, 150, 3, 20, 50, "Human", "Diversant");
+    public Spearman(ArrayList<Player>gang) {
+        super(100, 150, 8, 20, 50, "Human", "Diversant",gang);
         this.resistance = 25;
     }
     protected int resistance; // устойчивость к любым атакам
@@ -23,6 +25,7 @@ public class Spearman extends Player {
 
     @Override
     public void step() {
+        System.out.println(getClass().getName());
     }
     @Override
     public String getInfo() {
