@@ -6,8 +6,8 @@ public class Spearman extends Player {
 
 
 
-    public Spearman(ArrayList<Player>gang) {
-        super(100, 150, 8, 20, 50, "Human", "Diversant",gang);
+    public Spearman(ArrayList<Player>gang, int x, int y) {
+        super(100, 150, 8, 20, 50, "Human", "Diversant",gang, x , y);
         this.resistance = 25;
     }
     protected int resistance; // устойчивость к любым атакам
@@ -24,7 +24,7 @@ public class Spearman extends Player {
     }
 
     @Override
-    public void step() {
+    public void step(ArrayList<Player> team1) {
         System.out.println(getClass().getName());
     }
     @Override

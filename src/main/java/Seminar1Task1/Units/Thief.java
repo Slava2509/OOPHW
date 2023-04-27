@@ -3,8 +3,8 @@ package Seminar1Task1.Units;
 import java.util.ArrayList;
 
 public class Thief extends Peasant {
-    public Thief(ArrayList <Player> gang) {
-        super(gang);
+    public Thief(ArrayList <Player> gang, int x, int y) {
+        super(gang, x, y);
         this.speed = 2;
         this.agility = 20;
         this.secrecy = 3;
@@ -27,7 +27,7 @@ public class Thief extends Peasant {
     }
 
     @Override
-    public void step() {
+    public void step(ArrayList<Player> team1) {
         System.out.println(getClass().getName());
 
     }

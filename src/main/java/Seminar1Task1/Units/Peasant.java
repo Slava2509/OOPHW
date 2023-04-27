@@ -3,8 +3,11 @@ package Seminar1Task1.Units;
 import java.util.ArrayList;
 
 public class Peasant extends Player {
-    public Peasant(ArrayList<Player> gang) {
-        super(100, 100, 1, 1, 0, "hobbit", "Kolka",gang);
+    public boolean readiness;
+    private Player Peasant;
+
+    public Peasant(ArrayList<Player> gang, int x, int y) {
+        super(100, 100, 1, 1, 0, "hobbit", "Kolka",gang, x, y);
         this.brave = 10;
     }
 
@@ -17,12 +20,17 @@ public class Peasant extends Player {
     public String toString() {
         return "Крестьянин";
     }
+
     @Override
-    public void step() {
-        System.out.println(getClass().getName());
-
-
+    public void step(ArrayList<Player> enemy) {
+        if (readiness) {
+            System.out.println(this + " " + this.name + " Стоит");
+        }else{
+            readiness = true;
+            System.out.println(this + " " + this.name + " Передает стрелы");
+        }
     }
+
 
     @Override
     public String getInfo() {

@@ -5,7 +5,6 @@ import Seminar1Task1.Units.*;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Random;
-import java.util.SortedMap;
 
 
 public class main {
@@ -21,74 +20,76 @@ public class main {
 //        XBowMan xBowMan = new XBowMan();
 //        System.out.println(xBowMan.getInfo());
         ArrayList<Player> team1 = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 1; i < 11; i++) {
             switch (new Random().nextInt(6)) {
                 case 0:
-                    team1.add(new Sniper(team1));
+                    team1.add(new Sniper(team1, 1, i));
                     break;
                 case 1:
-                    team1.add(new Peasant(team1));
+                    team1.add(new Peasant(team1, 1, i));
                     break;
                 case 2:
-                    team1.add(new Monk(team1));
+                    team1.add(new Monk(team1, 1, i));
                     break;
                 case 3:
-                    team1.add(new Thief(team1));
+                    team1.add(new Thief(team1, 1, i));
                     break;
                 case 4:
-                    team1.add(new Spearman(team1));
+                    team1.add(new Spearman(team1, 1, i));
                     break;
                 case 5:
-                    team1.add(new XBowMan(team1));
+                    team1.add(new XBowMan(team1, 1, i));
                     break;
             }
         }
         ArrayList<Player> team2 = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 1; i < 11; i++) {
             switch (new Random().nextInt(6)) {
                 case 0:
-                    team2.add(new Sniper(team2));
+                    team2.add(new Sniper(team2, 10, i));
                     break;
                 case 1:
-                    team2.add(new Peasant(team2));
+                    team2.add(new Peasant(team2,10, i));
                     break;
                 case 2:
-                    team2.add(new Monk(team2));
+                    team2.add(new Monk(team2,10, i));
                     break;
                 case 3:
-                    team2.add(new Thief(team2));
+                    team2.add(new Thief(team2,10, i));
                     break;
                 case 4:
-                    team2.add(new Spearman(team2));
+                    team2.add(new Spearman(team2,10, i));
                     break;
                 case 5:
-                    team2.add(new XBowMan(team2));
+                    team2.add(new XBowMan(team2,10, i));
                     break;
             }
 
 
         }
+
         team1.forEach(n -> System.out.println(n.getInfo()));
         System.out.println("-".repeat(5));
         team2.forEach(n -> System.out.println(n.getInfo()));
         System.out.println("-".repeat(5));
-        team1.forEach(n -> n.step());
-        team2.forEach(n -> n.step());
+        team1.forEach(n -> n.step(team2));
+        team2.forEach(n -> n.step(team1));
         team1.forEach(n -> System.out.println(n.getInfo()));
         System.out.println("-".repeat(5));
         team2.forEach(n -> System.out.println(n.getInfo()));
-
-
-        ArrayList<Player> team3 = new ArrayList<>();
-        team3.addAll(team1);
-        team3.addAll(team2);
-        System.out.println(team3);
-        team3.sort(new Comparator<Player>() {
-            @Override
-            public int compare(Player o1, Player o2) {
-                return o2.speed - o1.speed;
-            }
-        });
-        System.out.println(team3);
+        ;
+//
+//        ArrayList<Player> team3 = new ArrayList<>();
+//        team3.addAll(team1);
+//        team3.addAll(team2);
+//        System.out.println(team3);
+//        team3.sort(new Comparator<Player>() {
+//            @Override
+//            public int compare(Player o1, Player o2) {
+//                return o2.speed - o1.speed;
+//            }
+//        });
+//        System.out.println(team3);
     }
+
 }

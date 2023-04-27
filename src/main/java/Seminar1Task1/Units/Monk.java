@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class Monk extends Mage {
 
-    public Monk(ArrayList<Player> gang) {
-        super(100, 200, 4, -10, 2, "Human", "MonahEgor", gang);
+    public Monk(ArrayList<Player> gang, int x, int y) {
+        super(100, 200, 4, -10, 2, "Human", "MonahEgor", gang, x, y);
         this.spirituality = 20;
         this.mana = 50;
         this.iq = 100;
@@ -25,7 +25,7 @@ public class Monk extends Mage {
     }
 
     @Override
-    public void step() {
+    public void step(ArrayList<Player> team1) {
         for (Player player : gang) {
             if (player.helth < player.maxHelth) {
                 player.getDamage(damage);

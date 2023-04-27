@@ -1,5 +1,7 @@
 package Seminar1Task1.Units;
 
+import Seminar1Task1.Coordinate;
+
 import java.util.ArrayList;
 
 //Крестьянин	Разбойник	Снайпер	Колдун
@@ -14,10 +16,13 @@ public abstract class Player implements GameInterface {
     protected String race;
     protected String name;
     protected ArrayList <Player> gang;
+    protected Coordinate coordinate;
 
 
 
-    public Player(int helth, int maxHelth, int speed, int damage, int def, String race, String name, ArrayList<Player>gang) {
+
+    public Player(int helth, int maxHelth, int speed, int damage, int def, String race, String name,
+                  ArrayList<Player>gang, int x, int y) {
         this.helth = helth;
         this.maxHelth = maxHelth;
         this.speed = speed;
@@ -26,6 +31,8 @@ public abstract class Player implements GameInterface {
         this.race = race;
         this.name = name;
         this.gang = gang;
+        this.coordinate = new Coordinate(x, y);
+
     }
 
     public void moove() {
@@ -38,8 +45,14 @@ public abstract class Player implements GameInterface {
         System.out.println("атака");
     }
 
-    public void died (){
+    public boolean die (){
+        if (helth <=0) {
         System.out.println("погиб");
+        return true;
+    } else {
+            return false;
+        }
+
     }
 
     public void defend () {
@@ -55,6 +68,7 @@ public abstract class Player implements GameInterface {
         }
 
     }
+
 
 
 }
