@@ -43,6 +43,7 @@ public abstract class Shooter extends Player {
                 if (player instanceof Peasant) {
                     if (!player.die() && ((Peasant) player).readiness) {
                         ((Peasant) player).readiness = false;
+                        System.exit(0);
                         this.armor += 1;
                         return;
                     }

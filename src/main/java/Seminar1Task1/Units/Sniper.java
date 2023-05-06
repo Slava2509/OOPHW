@@ -15,15 +15,14 @@ public class Sniper extends Shooter {
     };
 
     @Override
-    public String toString() {
+    public String getInfo() {
         return "Снайпер";
     }
 
 
     @Override
-    public String getInfo() {
-        return name +" здоровье: " + helth  + " макс. уровень здоровья: " + maxHelth +
-                " скорость: "+ speed + " урон: " + damage  + " боекомплект "  + armor;
+    public String toString() {
+        return name +" здоровье: " + helth  + " скорость: "+ speed + " урон: " + damage  + " боекомплект "  + armor;
     }
 
 }

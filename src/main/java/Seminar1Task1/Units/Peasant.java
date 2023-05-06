@@ -9,6 +9,7 @@ public class Peasant extends Player {
     public Peasant(ArrayList<Player> gang, int x, int y) {
         super(100, 100, 1, 1, 0, "hobbit", "Kolka",gang, x, y);
         this.brave = 10;
+        this.readiness = true;
     }
 
     protected int brave; // храбрость
@@ -17,24 +18,24 @@ public class Peasant extends Player {
 
     }// колоть(укол)
     @Override
-    public String toString() {
+    public String getInfo() {
         return "Крестьянин";
     }
 
     @Override
     public void step(ArrayList<Player> enemy) {
         if (readiness) {
-            System.out.println(this + " " + this.name + " Стоит");
+
         }else{
             readiness = true;
-            System.out.println(this + " " + this.name + " Передает стрелы");
+
         }
     }
 
 
     @Override
-    public String getInfo() {
-        return name + " здоровье "+ helth +" макс. уровень здоровья: " + maxHelth +" скорость: "+ speed +
+    public String toString() {
+        return name + " здоровье "+ helth + " скорость: "+ speed +
                 " урон: " + damage + " защита: " +def + " раса " + race;
         }
 

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Monk extends Mage {
 
     public Monk(ArrayList<Player> gang, int x, int y) {
-        super(100, 200, 4, -10, 2, "Human", "MonahEgor", gang, x, y);
+        super(100, 200, 4, -10, 2, "Human", "Monah", gang, x, y);
         this.spirituality = 20;
         this.mana = 50;
         this.iq = 100;
@@ -20,7 +20,7 @@ public class Monk extends Mage {
     }// воскрешение
 
     @Override
-    public String toString() {
+    public String getInfo () {
         return "Монах";
     }
 
@@ -37,8 +37,8 @@ public class Monk extends Mage {
 
 
     @Override
-    public String getInfo() {
-        return name + " здоровье " + helth + " макс. уровень здоровья: " + maxHelth + " скорость: " + speed +
-                " урон: " + damage + " защита: " + def + " раса " + race + " мана: " + mana + " ум: " + iq;
+    public String toString() {
+        return name + " helth " + helth + " speed: " + speed +
+                " урон: " + damage + " защита: " + def + " раса:" + race + " мана: " + mana + " ум: " + iq;
     }
 }

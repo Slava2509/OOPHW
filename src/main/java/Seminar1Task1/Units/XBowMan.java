@@ -20,17 +20,16 @@ public class XBowMan extends Shooter{
     }
 
     @Override
-    public String toString() {
+    public String getInfo() {
         return "Лучник";
     }
 
 
 
     @Override
-    public String getInfo() {
-        return name +" здоровье: " + helth  + " макс. уровень здоровья: " + maxHelth +
-                " скорость: "+ speed + " урон: " + damage + " защита: " + race + " раса: " + rangeAttack + " спец.атака "
-                + armor + " боекомплект ";
+    public String toString() {
+        return name +" helth: " + helth  + " speed: "+ speed + " урон: " + damage + " защита: "
+                + rangeAttack + " спец.атака " + armor + " боекомплект ";
     }
 
 }

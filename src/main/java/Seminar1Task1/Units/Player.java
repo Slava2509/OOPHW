@@ -15,14 +15,12 @@ public abstract class Player implements GameInterface {
     protected int def;
     protected String race;
     protected String name;
-    protected ArrayList <Player> gang;
+    protected ArrayList<Player> gang;
     protected Coordinate coordinate;
 
 
-
-
     public Player(int helth, int maxHelth, int speed, int damage, int def, String race, String name,
-                  ArrayList<Player>gang, int x, int y) {
+                  ArrayList<Player> gang, int x, int y) {
         this.helth = helth;
         this.maxHelth = maxHelth;
         this.speed = speed;
@@ -40,38 +38,45 @@ public abstract class Player implements GameInterface {
         System.out.println("движение");
     }
 
-    public void attack () {
+    public void attack() {
 
         System.out.println("атака");
     }
 
-    public boolean die (){
-        if (helth <=0) {
-        System.out.println("погиб");
-        return true;
-    } else {
+    public boolean die() {
+        if (helth <= 0) {
+            System.out.println("погиб");
+            return true;
+        } else {
             return false;
         }
 
     }
 
-    public void defend () {
+    public void defend() {
         System.out.println("общая защита");
     }
 
-    protected void getDamage (float damage){
+    protected void getDamage(float damage) {
         helth -= damage;
-        if (helth<0) {
+        if (helth < 0) {
             helth = 0;
         }
-        if (helth>maxHelth) {helth = maxHelth;
+        if (helth > maxHelth) {
+            helth = maxHelth;
         }
 
     }
 
+    public int[] getCoords() {
+        return new int[]{coordinate.x, coordinate.y};
+    }
 
-
+    public int getHp() {
+        return helth;
+    }
 }
+
 
 
 

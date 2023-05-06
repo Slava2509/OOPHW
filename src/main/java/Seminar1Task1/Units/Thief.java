@@ -22,7 +22,7 @@ public class Thief extends Peasant {
     }// спрятаться
 
     @Override
-    public String toString() {
+    public String getInfo() {
         return "Вор";
     }
 
@@ -33,8 +33,8 @@ public class Thief extends Peasant {
     }
 
     @Override
-    public String getInfo() {
-        return name + " здоровье " + helth + " макс. уровень здоровья: " + maxHelth + " скорость: " + speed +
-                " урон: " + damage + " защита: " + def + " раса " + race + " ловкость: " + agility + " скрытность " + secrecy;
+    public String toString() {
+        return name + " здоровье " + helth + " speed: " + speed + " урон: " + damage + " защита: " + def + " ловкость: "
+                + agility + " скрытность " + secrecy;
     }
 }

@@ -19,7 +19,7 @@ public class Spearman extends Player {
     }
 
     @Override
-    public String toString() {
+    public String getInfo() {
         return "Копейщик";
     }
 
@@ -28,9 +28,9 @@ public class Spearman extends Player {
         System.out.println(getClass().getName());
     }
     @Override
-    public String getInfo() {
-        return name + " здоровье " + helth + " макс. уровень здоровья: " + maxHelth + " скорость: " + speed +
-                " урон: " + damage + " защита: " + def + " раса " + race + " устойчивость к любым атакам: " + resistance;
+    public String toString() {
+        return name + " здоровье " + helth + " скорость: " + speed + " урон: " + damage + " защита: " + def
+               + " броня: " + resistance;
     }
 
 
