@@ -25,14 +25,14 @@ public abstract class Shooter extends Player {
     }
 
     @Override
-    public void step(ArrayList<Player> team1) {
+    public void step(ArrayList<Player> team) {
         if (helth <= 0 || armor <= 0) {
             return;
         }
         ;
         float minDistance = Float.MAX_VALUE;
         Player target = null;
-        for (Player u : team1) {
+        for (Player u : team) {
             float tmp = u.coordinate.getDistance(this.coordinate);
             if (tmp < minDistance) {
                 minDistance = tmp;

@@ -12,11 +12,6 @@ public class Spearman extends Player {
     }
     protected int resistance; // устойчивость к любым атакам
 
-    public void groupAttaks() {
-    }
-
-    public void earthquake() {
-    }
 
     @Override
     public String getInfo() {
@@ -25,7 +20,7 @@ public class Spearman extends Player {
 
     @Override
     public void step(ArrayList<Player> team1) {
-        System.out.println(getClass().getName());
+
     }
     @Override
     public String toString() {

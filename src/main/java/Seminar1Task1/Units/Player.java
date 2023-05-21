@@ -1,6 +1,7 @@
 package Seminar1Task1.Units;
 
 import Seminar1Task1.Coordinate;
+import javafx.scene.control.skin.CellSkinBase;
 
 import java.util.ArrayList;
 
@@ -33,9 +34,36 @@ public abstract class Player implements GameInterface {
 
     }
 
-    public void moove() {
+    protected void move(Player target) {
+        float dx = target.coordinate.distanceXY(this.coordinate)[0];
+        float dy = target.coordinate.distanceXY(this.coordinate)[1];
+        if (Math.abs(dy) < Math.abs(dx)) {
+            if (dx > 0) {
+                if (isEmptyPosition(this.coordinate.x-1, this.coordinate.y))
+                    this.coordinate.x--;
+            } else {
+                if (isEmptyPosition(this.coordinate.x+1, this.coordinate.y))
+                    this.coordinate.x++;
+            }
+            if (dy > 0) {
+                if (isEmptyPosition(this.coordinate.x, this.coordinate.y-1))
+                    this.coordinate.y--;
+            } else {
+                if (isEmptyPosition(this.coordinate.x, this.coordinate.y+1))
+                    this.coordinate.y++;
+            }
+        }
+    }
 
-        System.out.println("движение");
+    protected boolean isEmptyPosition(int x, int y) {
+        for (Player player : gang) {
+            if ((player.coordinate.x == x) && (player.coordinate.y == y)) {
+                if (!player.die()) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     public void attack() {
@@ -45,7 +73,6 @@ public abstract class Player implements GameInterface {
 
     public boolean die() {
         if (helth <= 0) {
-            System.out.println("погиб");
             return true;
         } else {
             return false;
@@ -75,6 +102,10 @@ public abstract class Player implements GameInterface {
     public int getHp() {
         return helth;
     }
+@Override
+    public void step(ArrayList<Player>enemy){
+
+}
 }
 
 
