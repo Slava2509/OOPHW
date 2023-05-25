@@ -59,11 +59,11 @@ public abstract class Player implements GameInterface {
         for (Player player : gang) {
             if ((player.coordinate.x == x) && (player.coordinate.y == y)) {
                 if (!player.die()) {
-                    return true;
+                    return false;
                 }
             }
         }
-        return false;
+        return true;
     }
 
     public void attack() {

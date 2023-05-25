@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Monk extends Mage {
 
     public Monk(ArrayList<Player> gang, int x, int y) {
-        super(100, 200, 4, -10, 2, "Human", "Monah", gang, x, y);
+        super(100, 200, 4, 10, 2, "Human", "Monah", gang, x, y);
         this.spirituality = 20;
         this.mana = 50;
         this.iq = 100;
